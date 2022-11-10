@@ -1,0 +1,19 @@
+The final demo will include map viewer and java.   In map viewer you need
+only display your SDO local coordinates opus (donkey cart in 2015).  You
+can do it as a map builder theme preview for partial credit.
+
+On the Java side you are first, to capture the donkey cart rows from your
+Oracle SDO table, and redo each one to display it in Java, e.g. tranlate an
+Oracle circle to a java circle, and display it with a Java draw method.
+
+After that you are to query your SDO table from Java using more JDBC,
+and in this phase, the request is to do 10 topological spatial functions,
+e.g. SDO_INTERSECTION.   Oracle will return something to Java, maybe a number
+and maybe an SDO_GEOMETRY, and you display the answer from your Java code.
+The final bit is to do 2 updates (reduced from 3) to the SDO table, one of
+which deletes a row, and one of which adds a row.  And then of course, redraw
+the entire picture after each of these changes.
+
+Good java design will make the demo easier.   E.g. a drop down list of
+your topological functions, and when you click on one, that query gets sent.
+

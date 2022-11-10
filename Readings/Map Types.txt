@@ -1,0 +1,60 @@
+
+                         Types of Maps
+
+    1. General purpose maps:  these maps serve many purposes and contain
+     multiple features such as roads, boundaries, capitals, rivers, lakes,
+     etc.  Such maps have many 'themes'
+
+    2. Thematic maps:  e.g. map showing which political party has won which
+     states in a national election.  Map showing major breweries.
+
+    3. Charts: these maps are used for navigation by boats or airplanes,
+      typically
+
+    4. Topographic maps: used to show terrain, altitude, so forth
+       Contours are a tool.   
+
+       Swedish army dictum: when the map and the terrain disagree, always 
+       believe the terrain.
+
+       important tool: contour lines---lines of constant altitude, typically
+          concentric 'circles'
+
+    5. Road maps
+
+    6. Cadastral maps: maps showing property boundaries, property ID's, etc.
+		- Meats and bounds
+
+    7. Mental maps: typically badly scaled semi-visual notions in our minds
+     about where things are and how to get there.    This is an  example of a 
+     rapidly fading human ability.   The Apaches did this well.  
+
+    8. Virtual maps----essentially maps in a DB for display by a computer;
+      can be interactive.   And should be; if so they are dynamic maps.
+
+    9. Raster or image maps.  Maps created by aerial or satellite photos
+       and stored more or less as digitized bits, faithful to the picture.
+       Since they are just pictures, they are often enhanced with boundaries
+       and other 'man made' demarcations.  "Natural" colors can be modified 
+       for emphasis, e.g. to display types of vegetation.
+
+  -------------------------------------------
+
+   Map features:
+
+      scale: an inch on the map means we have to drive how far?
+
+      directions: which way is up?  north?
+
+      legend: how do I read this stupid map?
+  
+      symbology, e.g.   /\   means  campground or mountain or whatever
+         (can be explicated by the legend)
+
+      coloration: most maps make good use of colors, e.g. to make boundaries
+        easier to spot;  show republican won states in red;  show interstate
+         highways in red.
+
+      others:  maps often include charts (e.g. bar charts or pie charts)
+          and tables.
+

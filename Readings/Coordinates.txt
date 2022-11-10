@@ -1,0 +1,160 @@
+
+                             Coordinates and Datums
+
+     Both topics have to do with locating things on maps, or globes.
+     Globe locations are given in degrees, i.e. in terms of angles, since
+     the alternative is stretching a cloth tape on the globe surface.
+     Map coordinates can be given in degrees, or in xy measurements like
+     miles or meters.
+
+     A datum is an elaborate and difficult to acquire specification of 
+     coordinates for a region.   Most countries have their own datum
+     as a national treasure, periodically revised.  Involved in a datum
+     are both a chosen ellipsoid or geoid, and a chosen projection.  The
+     goals are consistency and accuracy.
+
+     At a technical level, a geoid is the earth's shape if it were all
+     ocean, but with the existing densities and gravitational forces.
+     People thus discuss a virtual ocean as extending under the current
+     land masses.   A region lies within multiple datums.   Canada
+     can have its own, but so can North America.   To accurately
+     calculate the distance between two points, it is best to find a datum
+     for a region encompassing both points, and probably the smallest such
+     datum.
+
+     Geographic coordinates refers to giving map location using the familiar 
+     latitude and longitude.   Lines of longitude are called 'meridians',
+     and the zero or prime meridian runs through Greenwich, England.  Using
+     the usual notion of 360 degrees to go around a sphere, from the prime
+     meridian one can go West 180 degrees, and East 180 degrees.  So 112
+     degrees West is denoted by 112W or by -112.  Zero degrees latitude is 
+     the equator, and one proceeds North to the North pole by 1,2,3....,90.
+     Latitudes to the South have negative values: -1, -2, ..., -90
+     The 'grid' given by drawing lines of latitude and longitude on a map is 
+     called a 'graticule'.   Grid lines can be in local coordinates, and
+     meet at right angles.   THE graticule can appear as arcs, in many 
+     projections.  So grid is a more general term than graticule.
+
+     By good old long division, it can be seem that the length of one
+     degree of latitude is 111km, ON AVERAGE.  Because of elliptical 
+     flattening, the distance is a little less at the equator, a little
+     more near the poles.   If you did the math right this is distance
+     measured along the earth's surface.  People who claim they took
+     the real geodesic between two points probably were good at tunneling.
+     Since that can be difficult, shortest paths are considered to be those
+     taken along the earth surface following a great circle.  It should 
+     be clear that the distance of a degree of longitude is 111km at 
+     the equator, and converges to zero as you approach a pole.
+
+     The shortest path distance between two points can be computed by the 
+     formula (3D law of cosines)
+          cos(D) = sin a * sin b   +   cos a * cos b * cos(P)
+		  // D = inverse cos(sin a * sin b   +   cos a * cos b * cos(P)) * 111.111111
+     where D is the angular distance between points A and B, a is the 
+     latitude of A, b is the latitude of B, P is the longitudinal angle
+     difference between A and B.  These angles will be calculator/computer
+     calculated as radians or degrees.  So you calculate cos(D), find D
+     using arcos (aka cosine inverse), and then find the real d as D*111km
+     if D is in degrees.  For radians, divide by 2*pi, then multiply.
+     NOTE: always indicate that you want to go the 'short way' between two 
+     points.   So given longitudes of 100W and 50E, let P be 150 and not
+     210.  Think of the formula as 'correct' for P of 180 degrees or less.
+
+     Serious navigators, like airplane and ship captains, need these 
+     distances, but this is not a hard program feature to write.      
+     Another example of a need for a universal system is GPS recorders.
+
+     Map scale is determined in the large by the scale ratio between 
+     earth and the mathematical globe used for the projection.  This is a 
+     'nominal' scale, and because maps are nowhere perfectly equidistant,
+     the real scale varies from place to place on a map.   
+
+     Most maps use a rectangular grid coordinate system where grid lines
+     meet at right angles.   Much care is taken to minimize the resultant
+     distortion.  
+
+     One popular system is UTM (Universal Tranverse Mercator).  This is 
+     really a transverse mercator, so it produces a rectangular grid via
+     the projections, and it works well for most countries, and sees use in
+     the US and Canada.   With UTM a new 'central meridian' is used every 
+     6 degrees, starting from longitude 180, in order to minimize 
+     distortion, so each projection covers 6 degrees, west to east.  To
+     further reduce distortion, a secant cylinder is used instead of a 
+     tangent one.   With most UTM versions, the sixty zones are numbered from
+     one to 60, starting with 180W to 174W as zone one, and working east.
+
+     To simplify reference, 6 degree by 8 degree quadrangles
+     are used, and subdivided into little squares, accessed by letter 
+     indices.   The 6x8 large quads are indexed from 1 to 60, going from 
+     180W to 180E, and the latitude belts (or designators)  are indexed using
+     [C-X] - {O,I},
+     since O,I look like numbers (as in student passwords, hohoho).  Doing
+     the math, we have 20*8 = 160 degrees, which is OK since not much 
+     happens at poles, and planar projections are used up there.  The effort
+     is to make all positions have positive coords.   Within the little
+     squares into which the 6x8 quad is divided we use 'eastings' and 
+     'northings' from the lower left hand corner of the square.
+     NOTE: several sources state that UTM is used from -80degrees to +84degrees,
+     and it is not clear where the xtra 4 degrees north come from.  In fact 
+     zone X is simply elongated to 12 degrees.
+     NOTE: San Francisco is in quadrangle 10S, San Diego is in 11S; the US
+      (contiguous) is spanned by zones 10 through 19, and belts R,S,T,U.
+     NOTE: some UTM systems do not use the alphabetic belts, but measure 
+      everything from the equator.	
+
+     To be more specific, 8 degrees latitude is 888km, so if we want 100
+     km tall little squares, we want roughly nine divisions north to 
+     south.   The indexing starts at the equator, and uses A-V, cycling as 
+     often as needed, so there will be a run of about 9 letters in the 
+     breakup of a cell into 100km by 100km  squares.  This actually applies
+     to odd indexed zones:1,3,5,etc.   Even indexed zones are offset by 5 and
+     run thru the 20 letters starting with F.   From West to East the letters
+     A to Z, less I and O, are used, starting at 180W, and recycling every
+     18 degrees.    Coordinates will then
+     be specified something like   11S  DJ  44 82 (or 11SDJ4482) which means
+     zone 11, north-to-south belt S, the 100kmx100km square DJ within that
+     cell.   If there are four digits, then in this example 44 is an easting
+     of 44km, and a northing of 82 km.  This narrows it to the nearest 
+     kilometer.   If we say 445829 then within that square kilometer we go
+     east .5 kilometers, and north .9 kilometers.  This is the metric system
+     at work. NOTE: some UTM systems do not use this aphabetic breakdown.
+
+     NOTE: the coordinate scheme described about is known as the 'military
+      grid' version of the UTM coordinate system.
+     NOTE: 'zone' is consistently used to describe the UTM band of 6 degrees
+      longitude.
+     NOTE: the UTM coord system has a horizontal emphasis because it starts
+      with those 60 zones.  Good locations and measurements result by using
+      a UTM cylinder tangent to the meridian in the center of each zone, i.e.
+      we use 60 UTM projections, along with the 60 zones.
+     --------
+
+     Surveyors and others in the US use the SPCS (State Plane Coord. System).
+     This is based on the NAD-83 datum  (North America Datum--1983).
+     Another datum is SAD-69, and yes, you did guess what it stands for.
+     Two other commonly used datums are NAD-27 and WGS-84.
+
+     Often small scale maps use geographical coordinates given in terms
+     of degrees of longitude and latitude.  In this case the scheme can be
+     in one of two forms:
+
+       1. dd.mm.ss.xx or maybe dd.mmss.xx which represents degrees, minutes
+          and seconds. There are 60 minutes in a degree and there are 60
+          seconds in a minute, and the xx is a decimal fraction of a second
+          if you want to be more particular.
+
+       2. decimal degrees:  here the measurements are given in the form
+          dd.xxxx or usually dd.xxx  
+            So 1.001,0.000 would be a point on the equator which is 1 degree
+          east of the prime meridian, plus 1 thousandth of a degree.
+          Since a degree is 111km at the equator, more or less, .001
+          is about 111 meters, or 111 healthy strides.  By going to 
+          dd.xxxx we can distinguish objects 11 strides apart.
+      NOTE: since both 1. and 2. are in heavy use, little Java functions
+        to convert between the two are nice to have.   Call the methods
+        dmsToDd and dDToDms.   Prototype and write them! 
+
+      In closing we give one more formula, this one for specifying the 
+      distance between two consecutive lines of longitude (two meridians)
+      at a latitude of n degrees.   The answer is 111.11 cos n
+

@@ -1,0 +1,68 @@
+Home Work 5   MoCities shapefile
+
+    Using MOJO or Arcview, we can turn moCity.txt, a file of cities and
+    their geographic coordinates, into an event theme, and then into
+    a shapefile.    I then uploaded the .shp and .shx files to rohan
+    and we can display their contents using od -x, i.e. an octal dump with
+    a hex option.  This will happen in class.
+
+    You will be able to make  copies of those files.   ESRI has a set of white
+    papers, one of which deals with the exact formats of their
+    shapefiles.   Your first step is to obtain a copy of that white
+    paper.     Try esri.com -> library -> whitepapers -> pdfs
+    -> shapefile.pdf, which should have the title ESRI Shapefile
+    Technical Description.
+
+    You are then to take the hex dumps and show that they correspond
+    exactly to what is predicted by the ESRI white paper.   Do at
+    least one hand calculation of a double precision number to verify
+    that it corresponds correctly to some geographic coordinate in the
+    text file.  Do this slowly and carefully after reviewing IEEE
+    double precision representation.  Convert hexadecimal numbers to
+    decimal, showing your work.   Everything in the shp and shx file must
+    be explained.
+
+    A smart thing to do is to triple or quadruple space the shapefiles, so
+    you can annotate what is going on, by writing between the lines.
+
+    This is not a team project, so do your OWN work, and categorically refuse
+    to let others see it.  You can help someone understand IEEE floating
+    point, but NOT using any floating point numbers in the assignment.  You
+    can of course ask me for aid.
+	
+	
+	
+	
+	
+from your rohan account, to get correct shapefile type these
+cp ~eckberg/spatial/shp2sdo/mocities.shp  mocities.shx
+cp ~eckberg/spatial/shp2sdo/mocities.shx  mocities.shx
+cp ~eckberg/spatial/shp2sdo/mocities.dbf  mocities.dbf
+cp ~eckberg/spatial/shp2sdo/shp2sdo       shp2sdo
+
+
+
+
+
+
+
+
+CITY,LAT,LON
+Springfield,37.22,-93.30
+Jefferson City,38.60,-92.20
+St. Louis,38.63,-90.20
+Kansas City,39.08,-94.58
+St. Joseph,39.73,-94.82
+Cape Girardeau,37.28,-89.53
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	

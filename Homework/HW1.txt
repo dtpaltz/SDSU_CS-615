@@ -1,0 +1,138 @@
+
+                 Home Work Set 1
+
+                 Spatial Databases            Spring 2015
+
+          HINT: gadm.org has shapefiles and other formats of government
+     administration units for many countries, and can help you describe
+     many locations more precisely.   Their website does not have a shapefile
+     viewer, but they suggest ways to view their data.
+	 
+	 
+	 
+	 
+	 
+
+    1. In this problem, distance means shortest distance along a
+      'parallel', i.e. along a latitudinal circle.  This is NOT
+      crow flies distance......
+
+       (a) What is the distance from 72W longitude to 55E longitude at a
+         (i) latitude of 0 degrees (ii) lat. of 50 degrees
+         (iii) the tropic of cancer
+
+       (b) Calculate the longitude for the vertical bisector of zone 33
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+
+    2. For each pair of points below, given in terms of geographic coodinates,
+      find the great circle distance between the two points.
+
+      (a) p1: lat. 40deg N     long. 70deg W
+          p2: lat. 40deg N     long. 60deg E
+
+      (b) p1: lat. 20deg N     long. 145deg W
+          p2: lat. 65deg N     long.  35deg E
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+
+    3. (a) For hw 2. (a), find the distance if one follows a constant
+           bearing of "due West" from p1 to p2.
+
+       (b) Now repeat but for "due East".
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+
+    4. (a) Give the Quadrant bearing angle corresponding to the azimuth
+           angle of 310 degrees
+
+       (b) Find the azimuth angle that corresponds to S 36deg W
+
+	   
+	   
+	   
+	   
+	   
+	   
+    5. Search the web for information about one conical projection,
+      and one azimuthal projection.
+      State what you find in between 50 and 150 words.   The words MUST BE
+      YOUR OWN.  You may not copy other people's words.  Cite your main
+      reference, and no other reference, but you may take information
+      from several references.
+      You may include one or two images, and those can be freely copied, but
+      cited.  Using someone else's work without proper citation is called
+      plagiarism.  It can get a professor fired, or a student expelled or your
+      company sued.  Learn to never do this.  CS students HAVE been expelled
+      for flagrant copying.  If you copy at any point in this course, severe
+      grade reduction WILL occur.
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+    6. This is about geog coords.
+
+       (a) find reasonably accurate longitude, latitude for Chihuhua,
+          Mexico
+       (b) if you go due East for 180 degrees from 6.(a), where in the world
+        are you???  is it blue??  give your answer in place names and
+        in (long., lat.)  We can define such a journey as finding a
+        'parallel' antipode, which is often what people mean by an antipode;
+        this is not of course the correct definition of an antipode.
+        Specify what country you are in if you are not in an ocean or big
+        sea.  If it is a large country, determine the subunit you are
+        in inside that country, which may be a state, province, administrative
+        unit, island, whatever.
+       (c) find (long.,lat.) for the Cape of Good Hope, near the
+          Southern tip of Arica
+       (d) determine the location of the point antipodal to that in (c);
+          this means the long and lat, as well as the part of the world
+          where you find yourself.
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+    7. Convert 33.77 degrees to degrees minutes and seconds, showing some work.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

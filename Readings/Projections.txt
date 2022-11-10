@@ -1,0 +1,228 @@
+Map Projections
+
+Decent web references:
+ 1. http://www.colorado.edu/geography/gcraft/notes/mapproj/mapproj.html
+ 2. http://egsc.usgs.gov/isb/pubs/MapProjections/projections.html
+ 3. http://www.lib.umd.edu/GOV/GIO/maps.html
+
+The basic problem is how to map a 3D world onto a 2D computer screen or
+sheet of paper.   An attempt to do so will lose something.   There is
+no self-evident way to present this material.
+
+A map projection is capable of preserving some but not all of the following:
+(a) distances (this means that the ratio of map distance to real world
+   distance is constant or very nearly so throughout the map), i.e. that
+   the 'scale' is not a laughable approximation
+(b) direction (also known as 'angle'): this means 'north' on the map always
+   means real world north.  Moreover this applies to other directions
+   like 'north east', which is a 45 degree angle in the clockwise direction
+   from the y axis, and the origin of the map.
+(c) area: which means the ratio of map area to real world areas is a constant
+    (a term like 'equal area' might be used) A.k.a "equivalent" projection.
+(d) shape: an equilateral triangle in the real world will be an equilateral
+   triangle on the map;  there is no promise here of constant area ratio
+   however, i.e. the triangles can be similar, and not area preserving, i.e.
+   (d) does not imply (c) or conversely.
+
+NOTE: a map is 'conformal', if it preserves angles and shapes, at least
+   in local areas.
+
+A globe preserves a,b,c,d above and is conformal.   No flat map serves as
+well.
+
+The globe:
+  meridians are halves of great circles through both poles.  They are
+  specified relative to the Prime Meridian that goes through Greenwich,
+  England.  This meridian has 'degree zero", and the whole set is
+  specified as ranging from -180 degrees to +180 degrees, or as 180deg W
+  to 180deg E.   The meridians are evenly spaced in terms of angles
+  measured from the center of the earth, but the distance between them is
+  a function of distance from the equator.
+
+  meridians are measurements of 'longitude'
+
+  parallels are measurements of latitude.  The equator is at 'degree 0'.
+  The parallels range from -90 degrees to +90 degrees, ranging from south
+  pole to north pole.  They are equally spaced in terms of angles, and are
+  also equally spaced therefore in terms of real world surface distance on
+  the map.   Because the circumference of the map is 25000 miles, and the
+  pole to pole distance is half that, the typical map of the entire world
+  is usually twice as wide as it is tall.
+
+  the globe is roughly spherical, but slightly squashed at the poles, i.e.
+  an ellipsoid, but there is considerable variation in altitude since no
+  one sanded it down to a perfect orb.  The term geoid is sometimes used to
+  describe the ultimate global reality, or in its very technical meaning,
+  what the globe would look like at ocean height, if the ocean were
+  extended under land masses in a manner consistent with gravitational forces
+  at each point.  Gravitational forces vary from point to point.
+
+--
+
+The basic (standard) Mercator projection is the best known map of the
+entire globe.  The projection is 'cylindrical', i.e. is based on a
+particular cylinder, in this case one that wraps neatly around the equator.
+(technically, the cylinder notion is an approximation, and really an
+'inflated sphere' is how it is done, but that is not a big deal)
+
+If one projects from the north south axis in a horizontal direction, the
+areas and latitudes near the poles would be horribly compressed, and
+distances in northern realms therefore horribly distorted north to south.
+The northern parallels are artificially close together.  This effect is
+the same as if you take a picture of the earth from the moon, more or less.
+The basic Mercator uses the scheme below, or something close thereto.
+
+If one projects from the center of the earth, then the map MUST BE infinite
+in the vertical direction in order to capture every point except the two
+poles.  This was seen as using too much paper or too many pixels.   So
+one cheats by OMITTING parts of the two polar regions.   Nonetheless the
+cylinder projected upon is TALLER than the poles.  There is thus a lot of
+distortion in the polar regions, as well as some omission.  The distortion
+is that east to west distances are enormously stretched as we move north.
+Moreover the distance between parallels also increases as we move north.
+
+Distance is true (preserved) on the equator only, and only close to true
+near the equator.   The map is conformal in the small, i.e. if a small
+area is exploded.   The map preserves direction however.   A 'rhumb'
+line, i.e. a straight line on the map is a true direction, but does not
+correspond to a great circle arc, i.e. distance is not perfect or
+shortest.
+
+NOTE: some Mercator maps are viewed is being drawn for a cylinder whose
+diameter is smaller than the Earth's, e.g. passing through the parallels
+at +45, -45.   This causes less distortion for the good old US of A.
+
+In this case distance is true at three parallels: -45, 0, 45
+This kind of map is called a SECANT mercator map, since the cylinder
+intersects the Earth in what is called a secant in your friendly
+neighborhood calculus class.
+
+NOTE: the kind of map originally described is a TANGENT Mercator map
+with the cylinder tangent to the equator.
+
+A transverse Mercator is one where the cylinder is tangent to a great circle
+through the poles.
+An oblique Mercator is one where the cylinder is tangent to any other great
+circle.
+
+a website to check for Mercator is
+   www.math.ubc.ca/~israel/m103/mercator/mercator.html
+
+NOTE: sometimes conformal maps are characterized by saying meridians meet
+  parallels at right angles.   This is often more or less a true
+  statement and is true in spades about the basic Mercator projection.
+
+NOTE: it is sometimes asserted that for large maps, conformal and equal-area
+  cannot be achieved simultaneously.   I would not know how to prove that.
+  The basic Mercator is badly NOT equal area.  A conic equal area map
+  with the cone point at the north pole, will have meridians meeting
+  parallels at right angles (at least in terms of tangent lines to arcs
+  repesenting parallels), but will not preserve direction or shape---the
+  distance between parallels will now tend to decrease with distance from
+  the pole, the opposite effect from the basic Mercator.  This map does
+  not tend to preserve shape well at large distances from the pole, i.e.
+  where it counts:  populous areas.
+
+---
+Def. azimuth is an angle from some axis
+        or
+     ....(various astronomical meanings)
+Def. azimuthal projection: a projection onto a plane where the plane is
+  tangent to the earth at some point.   aka planar projection; the term
+  'planner' applied to a surface means 'flat' also.
+
+ aspects/flavors: 1. polar:  plane touches a pole
+                  2. equitorial: plane touches the equator
+                  3. oblique: other
+
+ the point of projection can be at infinity, or on the globe opposite the
+ point of tangency or .....
+
+ the 'aspect' of a side of a hill is the direction that slope 'faces';
+ if the are running down a hill (be careful) and facing East, then East
+ is the aspect of your trail
+---
+
+ A conic projection is a projection onto a cone which is then sliced and
+ unfolded. the cone can be tangent to a parallel, or oblique or secant or
+ whatever.  the usual flavors are possible.   The point of projection can be
+ on the globe, e.g. a pole, or 'above' the globe, or whatever.
+
+---
+ To understand preservation issues, imagine the area betwee two consecutive
+  meridians, and two consecutive parallels at about +45.   the top and bottom
+  edges will be concave, and the sides will clearly not be parallel, but
+  'converge' to the north pole.   An equal area map will look much like
+  this sketch.  Clearly area and distance are fairly well preserved, but
+  direction is not.   Two non parallel lines cannot both point north.
+  If this area is distorted to a rectangle, clearly area and distance will
+  suffer, but direction will now be preserved.   And the map will be
+  regarded as conformal, i.e. LOCALLY preserving shape and direction.
+
+
+
+
+
+ If a projection is onto a plane, the word 'perspective' describes the
+ location of the point which is the center of the projection.
+
+ More terms:
+  (a) if the center of the projection is the center of the earth, the
+   projection is 'gnomonic' (gno is a root word for 'know')
+    Such a projection shows great circles as straight lines.
+  (b) if the center of the projection is the point on the earth surface
+   opposite the point of a tangent plane, the projection is stereographic
+  (c) if the projection is made from a point at infinity, the projection
+   is orthographic
+  (d) rhumb line or loxodrome: a line of constant direction -- it intersects
+    every meridian at the same angle;  e.g. if you follow a NE rhumb line
+    from San Diego for a long ways, what point are you guaranteed to reach?
+    Or coverge to?  The following are the same: line of constant bearing,
+    rhumb line, loxodrome, and the colloquial phrase coming from them:
+    dead reckoning.  Whereas "as the crow flies" means a great circle arc.
+
+ Summary: azimuthal: projected on a plane, either tangent or secant.
+   gives a wonderful head start on preserving directions, so sometimes
+   'azimuthal' means direction preserving.  For a planar map, one can
+   discuss 'perspective', which refers to the projection point.
+
+         cylindrical: projected on a tangent or secant cylinder.  Such maps
+   are characterized to looking like rectangles when unfolded.  Of course
+   one could be viciously deceptive and cut a circle out of one.
+
+         conic: projected onto a cone;   when unfolded these maps tend to
+   look like a fan.   For strategic reasons, the cone point is usually
+   a pole.
+
+ Microsoft interview question:  from how many places on the globe can you
+    walk one mile south, one mile east, and finally one mile north, and be
+    back where you started?
+
+ Geographers describe direction primarily by one of the following methods:
+   1. Azimuth
+   2. Quadrant
+ An 'azimuth' of zero degrees by definition indicates due North.  For all
+ other directions, swing and measure an angle by going clockwise from the
+ y axis.  Thus an azimuth of 90 degrees specifies due East, 180 is due
+ South, so forth.
+
+ There are four quadrants: NE, NW, SE, SW.  To indicate a direction pick
+ the right quadrant and then fine tune. E.g. N 60 deg E is the same as an
+ azimuth of 60 degrees.  E.g. S 30 deg W is the same as an azimuth of 210.
+
+ Some oft used projections are these
+  1. Mercator cylindrical
+  2. Lambert Azimuthal Equal-Area
+  3. Albers Conic Equal-Area
+  4. Robinson compromise projection (tries to distort everything a bit, but
+        nothing too much)
+  5. Mollweide elliptical (squishes the globe at the poles with some drama)
+  6. Sinusoidal equal-area (aka Mercator Equal-Area)
+      parallels are equally spaced, and inter-meridian distance is
+       accurately proportional to latitude (uses the cos() multiplier)
+  7. Peter's equal area, aka Gall equal area
+      originally done by Jas. Gall, then reinvented by Arno Peters;  got
+      a lot of politically correct press for not making Greenland look as big
+      as Africa----not loved by cartographers, but worth a Google;
+     Monmonier, who authored "How to Lie With Maps", says it looks like wet
+     ragged underwear, hung on the Arctic Circle (rough quote)

@@ -1,0 +1,22 @@
+the following tree shows roughly what subclasses what in Java, as regards
+containers and components
+
+
+                           COMPONENT CRIB
+
+                            Component
+                                |
+        ________________________|_____________
+       |                                      |
+     Button etc..                         Container
+                                              |
+                                   ___________|__________
+                                   |                    |
+                                 Panel                Window
+                                   |                    |
+                                   |               _____|_______
+                                   |               |            |
+                                Applet          Frame        Dialog
+
+so Panel and Applet both use FlowLayout, while Window and sons use
+BorderLayout

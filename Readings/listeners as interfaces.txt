@@ -1,0 +1,25 @@
+As said in class, a Java interface contains only constants and
+method prototypes.  A Java user class can extend precisely one
+class (Object if you do not mention a class), but can optionally
+implement many interfaces.  So if A is a class, and if I and J are
+interfaces, you can code this:
+  Class myclass extends A implements I,J {.........}
+
+And when you implement an interface, you should give algorithm code
+for its methods.
+
+Now listeners detect events on a frame or panel or button or whatever,
+and listeners are interfaces.  A JButton has an ActionListener that
+listens for button clicks, and it prototypes precisely one method,
+actionPerformed.   The class example will be sent soon.  But WindowListener
+has 7 protoypes.  Listeners with more than one protoype have an associated
+adapter class.  So there is a WindowAdapter class that has code for
+6 of the 7 prototyped methods, saving us a lot of work.  We just provide
+code for the windowClosing method.
+
+Will say more about this in the future, but the basic idea is this:  when
+you interact with a frame, that is an Event, and generates an Event object,
+which is listened for, hopfully, by one or more Listeners, which are interaces.
+Most interfaces have an Apapter class to implement the functions in that
+interface, which is good for us.  But we can override them, and write our own
+implementing algorithms.

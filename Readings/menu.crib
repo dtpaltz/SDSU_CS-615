@@ -1,0 +1,39 @@
+                            MENU CRIB
+
+                            Object
+                              |
+                              |
+                        MenuComponent
+                              |
+             _________________|___________________
+             |                                   |
+             |                                   |
+           MenuBar                           MenuItem
+                                                 |
+                                  _______________|_________________
+                                  |                               |
+                                  |                               |
+                                Menu                   CheckboxMenuItem
+                                  |
+                                  |
+                             PopUpMenu
+
+   Note1: Menus can be nested, and hence Menu is a subclass of MenuItem
+
+   Note2: MenuItem's regard a click as an ActionEvent, but CheckBoxMenuItem
+      regards a check box click as an ItemEvent
+
+   Note3: awt menus are not descendants of Component, but things differ in
+      swing as seen below
+
+                                  JComponent
+                                      |
+                   ___________________|___________________________
+                   |                               |             |
+                   |                               |             |
+            AbstractButton                     JMenuBar    JPopUpMenu
+                   |
+         __________|___________________
+         |           |                |
+         |           |                |
+      JMenu   JCheckboxMenuItem  JRadioButtonMenuItem

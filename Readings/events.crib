@@ -1,0 +1,62 @@
+                            EVENTS CRIB
+
+                            EventObject   [home of getSource()]
+                                 |
+                             AWTEvent (abstract)  [home of getId()]
+                                 |
+     ____________________________|_____________________________
+     |                |               |            |          |
+ ActionEvent*  AdjustmentEvent* ComponentEvent ItemEvent* TextEvent*
+                                      |
+        ______________________________|__________________________
+       |             |          |                    |          |
+ ContainerEvent FocusEvent InputEvent(abstract) PaintEvent WindowEvent
+                                |
+                      __________|_________
+                      |                  |
+                   KeyEvent          MouseEvent
+
+ where * denotes a "semantic" event;  other events are deemed "low level"
+
+
+      INTERFACES         METHODS
+
+   ActionListener       actionPerformed
+
+   AdjustmentListener   adjustmentValueChanged
+
+   ItemListener         itemStateChanged
+
+   TextListener         textValueChanged
+
+   ComponentListener    componentHidden
+                        componentMoved
+                        componentResized
+                        componentShown
+
+   ContainerListener    componentAdded
+                        componentRemoved
+
+   FocusListener        focusGained
+                        focusLost
+
+   KeyListener          keyPressed
+                        keyReleased
+                        keyTyped
+
+   MouseListener        mouseClicked
+                        mouseEntered
+                        mouseExited
+                        mousePressed
+                        mouseReleased
+
+   MouseMotionListener  mouseMoved
+                        mouseDragged
+
+   WindowListener       windowClosed
+                        windowClosing
+                        windowOpened
+                        windowActivated
+                        windowDeactivated
+                        windowIconified
+                        windowDeiconified

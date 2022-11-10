@@ -1,0 +1,11 @@
+SDO_GEOM.RELATE   	Determines how two objects interact.
+SDO_GEOM.SDO_AREA   	Computes the area of a two-dimensional polygon.
+SDO_GEOM.SDO_CENTROID   	Returns the centroid of a polygon.
+SDO_GEOM.SDO_CONVEXHULL   	Returns a polygon-type object that represents the convex hull of a geometry object.
+SDO_GEOM.SDO_DIFFERENCE   	Returns a geometry object that is the topological difference (MINUS operation) of two geometry objects.
+SDO_GEOM.SDO_DISTANCE   	Computes the distance between two geometry objects.
+SDO_GEOM.SDO_INTERSECTION   	Returns a geometry object that is the topological intersection (AND operation) of two geometry objects.
+SDO_GEOM.SDO_LENGTH   	Computes the length or perimeter of a geometry.
+SDO_GEOM.SDO_MBR   	Returns the minimum bounding rectangle of a geometry.
+SDO_GEOM.SDO_POINTONSURFACE   	Returns a point that is guaranteed to be on the surface of a polygon.
+SDO_GEOM.SDO_UNION   	Returns a geometry object that is the topological union (OR operation) of two geometry objects.
